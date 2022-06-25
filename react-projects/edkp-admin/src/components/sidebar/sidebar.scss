@@ -2,7 +2,7 @@
     flex: 1;
     border-right: 0.5px solid lightgrey;
     min-height: 100vh;
-    background-color: white;    
+    background-color: #12428A;    
     .top{
         height: 50px;
         display: flex;
@@ -11,7 +11,7 @@
         .logo{
             font-size: 20px;
             font-weight: bold;
-            color: #6439ff
+            color: lightgrey;
         }
     }
     hr{
@@ -29,7 +29,7 @@
             .title{
                 font-size: 10px;
                 font-weight: bold;
-                color: #999;
+                color: white;
                 margin-top: 15px;
                 margin-bottom: 5px;
             }
@@ -46,12 +46,12 @@
 
             .icon{
                 font-size: 18px;
-                color: #7451f8;
+                color: white;
             }
             span{
                 font-size: 13px;
                 font-weight: 600;
-                color: #888;
+                color: white;
                 margin-left: 10px;
 
             }
