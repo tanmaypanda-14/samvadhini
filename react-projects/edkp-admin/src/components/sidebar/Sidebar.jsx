@@ -4,12 +4,19 @@ import DashboardIcon from "@mui/icons-material/Dashboard";
 import ManageHistoryIcon from "@mui/icons-material/ManageHistory";
 import SettingsIcon from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
+import mitwpulogo from "../../assets/MIT-WPU.png"
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="top">
-        <span className="logo">admin page</span>
+        <span className="logo">
+          <img
+            src={mitwpulogo}
+            alt=""
+            className="mitlogo"
+          />
+        </span>
       </div>
       <hr />
       <div className="center">
