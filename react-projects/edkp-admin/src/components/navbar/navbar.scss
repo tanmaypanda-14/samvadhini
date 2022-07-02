@@ -1,23 +1,55 @@
 .navbar {
-    height: 50px;
+    height: 58px;
     border-bottom: 0.5px solid rgb(231, 228, 228);
     display: flex;
-    align-items: center;
+    align-items: left;
     font-size: 14px;
     color: #555;
-    //background-color: #12428A;
+    background-color: #12428A;
+    box-shadow: 2px 2px 2px 2px #888888;
   
     .wrapper {
       width: 100%;
-      padding: 20px;
+      padding: 5px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      .logo {
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        width: 60px;
+        height: 58px;
+        display: inline-block;
+        background-color: white;
+
+
+      .logoName { 
+        position: absolute;
+        width: 118px;
+        height: 34px;
+        left: 80px;
+        top: 12px;
+
+        font-family: 'Inter';
+        font-size: 12px;
+        line-height: 17px;
+        text-align: left;
+        color: white;
+     
+
+      
   
       .search {
         display: flex;
         align-items: center;
+        justify-content: right;
         border: 0.5px solid lightgray;
+        //color: black;
+        height: 50px;
+       //width: 200px;
+        background-color:white;
         padding: 3px;
   
         input {
@@ -26,47 +58,28 @@
           background: transparent;
             
           &::placeholder {
-            font-size: 12px;
+            font-size: 100px;
           }
         }
       }
+    }
+  }
   
-      .items {
-        display: flex;
-        align-items: center;
+    
   
         .item {
           display: flex;
           align-items: center;
           margin-right: 20px;
           position: relative;
+          color: white;
   
-          .icon {
-            font-size: 20px;
-          }
+          
   
-          .avatar {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-          }
+          
   
-          .counter {
-            width: 15px;
-            height: 15px;
-            background-color: red;
-            border-radius: 50%;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            font-weight: bold;
-            position: absolute;
-            top: -5px;
-            right: -5px;
-          }
+         
         }
       }
     }
-  }
+  
