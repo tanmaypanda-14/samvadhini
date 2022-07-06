@@ -6,9 +6,11 @@ from haystack.pipelines import ExtractiveQAPipeline
 from flask import Flask, make_response, request
 from googletrans import Translator
 import requests
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
-
+CORS(app,resources={r"/api/*": {"origins": "*"}})
+app.config["CORS_HEADERS"] = "Content-Type"
 
 def gen_result(text):
     # text = "ळ " + text

@@ -1,85 +1,156 @@
 .navbar {
-    height: 58px;
-    border-bottom: 0.5px solid rgb(231, 228, 228);
+  height: 58px;
+  border-bottom: 0.5px solid rgb(231, 228, 228);
+  display: flex;
+  align-items: left;
+  font-size: 14px;
+  color: #555;
+  background-color: #12428a;
+  box-shadow: 2px 2px 2px 2px #888888;
+
+  .wrapper {
+    width: 100%;
+    padding: 5px;
     display: flex;
-    align-items: left;
-    font-size: 14px;
-    color: #555;
-    background-color: #12428A;
-    box-shadow: 2px 2px 2px 2px #888888;
-  
-    .wrapper {
-      width: 100%;
-      padding: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
 
-      .logo {
-        font-size: 20px;
-        font-weight: bold;
-        color: white;
-        width: 60px;
-        height: 58px;
-        display: inline-block;
-        background-color: white;
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      width: 60px;
+      height: 58px;
+      display: inline-block;
+      background-color: white;
 
-
-      .logoName { 
+      .logoName {
         position: absolute;
         width: 118px;
         height: 34px;
         left: 80px;
         top: 12px;
 
-        font-family: 'Inter';
+        font-family: "Inter";
         font-size: 12px;
         line-height: 17px;
         text-align: left;
         color: white;
-     
 
-      
-  
-      .search {
-        display: flex;
-        align-items: center;
-        justify-content: right;
-        border: 0.5px solid lightgray;
-        //color: black;
-        height: 50px;
-       //width: 200px;
-        background-color:white;
-        padding: 3px;
-  
-        input {
-          border: none;
-          outline: none;
-          background: transparent;
-            
-          &::placeholder {
-            font-size: 100px;
+        .search {
+          width: 500px;
+          height: 40px;
+          margin: 150px auto;
+          background: #444;
+          background: rgba(0, 0, 0, 0.2);
+          border-radius: 3px;
+          border: 1px solid #fff;
+
+          input {
+            width: 370px;
+            padding: 10px 5px;
+            float: left;
+            color: #ccc;
+            border: 0;
+            background: transparent;
+            border-radius: 3px 0 0 3px;
+            &:focus {
+              outline: 0;
+              background: transparent;
+            }
+          }
+
+          button {
+            position: relative;
+            float: right;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            height: 40px;
+            width: 120px;
+            color: #fff;
+            background: transparent;
+            border-left: 1px solid #fff;
+            border-radius: 0 3px 3px 0;
+            &:hover {
+              background: #fff;
+              color: #444;
+            }
+            &:active {
+              box-shadow: 0px 0px 12px 0px rgba(225, 225, 225, 1);
+            }
+            &:focus {
+              outline: 0;
+            }
           }
         }
       }
     }
   }
-  
-    
-  
-        .item {
-          display: flex;
-          align-items: center;
-          margin-right: 20px;
-          position: relative;
-          color: white;
-  
-          
-  
-          
-  
-         
-        }
-      }
-    }
-  
+}
+.item {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  position: relative;
+  color: red;
+}
+
+.button4 {
+  appearance: none;
+  background-color: #fafbfc;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 6px 16px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.button4:hover {
+  background-color: #f3f4f6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+.button4:disabled {
+  background-color: #fafbfc;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959da5;
+  cursor: default;
+}
+
+.button4:active {
+  background-color: #edeff2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+.button4:focus {
+  outline: 1px transparent;
+}
+
+.button4:before {
+  display: none;
+}
+
+.button4:-webkit-details-marker {
+  display: none;
+}

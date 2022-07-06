@@ -3,6 +3,7 @@ import Navbar from "../../components/navbar/Navbar";
 import Widget from "../../components/widget/Widget";
 import Chart from "../../components/chart/Chart";
 import Featured from "../../components/featured/Featured";
+// import Dropdown from "../../components/dropdown/Dropdown";
 import "./home.scss";
 
 const Home = () => {
@@ -11,6 +12,9 @@ const Home = () => {
      
       <div className="homeContainer">
         <Navbar />
+        {/* <div>
+          <Dropdown/>
+        </div> */}
         <div className="widgets">
           <Widget type="user" />
           <Widget type="Documents" />
