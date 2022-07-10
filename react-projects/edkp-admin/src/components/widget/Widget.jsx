@@ -1,4 +1,5 @@
 import "./widget.scss";
+import { Link } from "react-router-dom";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import AssignmentIcon from '@mui/icons-material/Assignment';
@@ -7,15 +8,19 @@ const Widget = ({ type }) => {
   let data;
 
   //temporary
-  const amount = 100;
-  const diff = 20;
+  const amount = 0;
+  const diff = 0  ;
 
   switch (type) {
     case "user":
       data = {
         title: "USERS",
         isMoney: false,
-        link: "See all users",
+        link: (
+          <Link to="/users" style={{ textDecoration: "" }}>
+          View last 10 users
+          </Link>
+        ),
         icon: (
           <PersonOutlinedIcon
             className="icon"
@@ -31,7 +36,11 @@ const Widget = ({ type }) => {
       data = {
         title: "DOCUMENTS",
         isMoney: false,
-        link: "View all documents",
+        link: (
+          <Link to="/documents" style={{ textDecoration: "" }}>
+          View available documents
+          </Link>
+        ),
         icon: (
           <AssignmentIcon
             className="icon"

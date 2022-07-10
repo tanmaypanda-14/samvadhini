@@ -22,7 +22,7 @@ const List = () => {
       documents: "Bonafide Certificate",
       date: "1 March",
       amount: 900,
-      method: "Online Payment",
+      method: "Online",
       status: "Pending",
     },
     {
