@@ -1,5 +1,6 @@
 import "./navbar.scss";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import Searcherp from "../searcherp/Searcherp";
+// import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 //import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import Collegelogo from "../../assets/MIT-WPU.png";
 
@@ -16,13 +17,7 @@ const Navbar = () => {
           ></img>
           <span className="logoName">MIT WORLD PEACE UNIVERSITY | PUNE</span>
         </div>
-        <div className="search">
-          <form className="search" action="">
-            <input type="search" placeholder="Enter ERP number " required />
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-        <SearchOutlinedIcon />
+        <Searcherp />
         <div className="item">
           <button type="button" className="button4">
             LogOut

@@ -22,7 +22,7 @@ export const docColumns = [
       width: 160,
       renderCell: (params) => {
         return (
-          <div className={`cellWithStatus ${params.row.status}`}>
+          <div className={`cellWithavailabiltity ${params.row.status}`}>
             {params.row.status}
           </div>
         );
@@ -49,7 +49,7 @@ export const docColumns = [
     {
         id: 3,
         documents: "test1",
-        status: "available",
+        status: "unavailable",
         cost: 100,
         count: 35,
     },
