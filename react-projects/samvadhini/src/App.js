@@ -1,14 +1,17 @@
-import React from "react";
-import Header from "./components/header";
-import Message from "./components/message";
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <Header />
-        <Message />
-      </div>
-    );
-  }
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home/Home';
+import Model from './pages/Model/Model';
+import Thanks from './pages/TU/TU';
+const App =()=>{
+  return(
+    <BrowserRouter>
+    <Routes>
+      <Route exact path ='/' element={<Home/>}/>
+      <Route exact path= '/model' element={<Model />}/>
+      <Route exact path= '/thankyou' element={<Thanks />}/>
+    </Routes>
+    </BrowserRouter>
+  )
 }
-export default App;
+export default App
