@@ -62,6 +62,9 @@ function Model() {
     const response = await fetch("/query",requestoptions);
     const data = await response.json();
     console.log(data);
+    setTimeout(() => {
+        navigation('/thankyou')
+    },10000 );
     setAnswer(data.documents[0].content);
     setMeta(data.documents[0].meta.answer);
   } 
@@ -87,10 +90,8 @@ function Model() {
     
   }
 
-  const navigate = useNavigate();
-
   const navtu=()=>{
-    navigate('/thankyou');
+    navigation('/thankyou');
 }
 
   return (
