@@ -83,9 +83,14 @@ function Model() {
     <>
       <Particle></Particle>
       <div className="container">
-      <h1>Speech to text</h1>
+      <h1>Samvadhini</h1>
         <div className="box">
-          <h2>text</h2>
+          <h2>Instructions</h2>
+          <ol>
+          <li>Click on the mic button when you are ready to speak</li>
+          <li>Click on submit button when you are done speaking</li>
+          <li>Click on Finish when your doubt has been answered</li>
+          </ol>
           {isListening ? <span></span> : <span></span>}
           <button onClick={handleSaveText} disabled={!text}>
             Submit
