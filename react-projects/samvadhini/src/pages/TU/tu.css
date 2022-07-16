@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding:0px;
+}
+.tu{
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-rows: 1fr auto 1fr;
+}
+.thank{
+    font-family: 'Oxanium', cursive;
+    color: white;
+    font-size: 3rem;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.btn-wrap{
+    margin: 2% 0 2% 0;  
+    display: flex;
+    justify-content: center;
+}
+
+.btn-wrap button {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        color: #0b4b9e;
+        font-size: 1.4rem;
+        padding: 1%;
+        border-radius: 10px;
+        border:solid 3.5px #a7b3e9;
+        background-color: #a7b3e9;
+        transition: width 0.5s;
+        /* background-repeat:no-repeat; */
+}
+
+.btn-wrap button:hover{
+    background-color: transparent;
+    background-repeat:no-repeat;
+    border: solid 3.5px #E0C9A6;
+    color: #E0C9A6;
+}

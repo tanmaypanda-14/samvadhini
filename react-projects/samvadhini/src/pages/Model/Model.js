@@ -24,12 +24,16 @@ function Model() {
   const handleListen = () => {
     if (isListening) {
       mic.start();
+      setButtonText('fa fa-microphone fa-2x')
+      setMicColor('red')
       mic.onend = () => {
         console.log("continue..");
         mic.start();
       };
     } else {
       mic.stop();
+      setButtonText('fa fa-microphone fa-2x color-red')
+      setMicColor('white')
       mic.onend = () => {
         console.log("Stopped Mic on Click");
       };
@@ -78,14 +82,16 @@ function Model() {
   const navtu = () => {
     navigation("/thankyou");
   };
+  const [buttonText, setButtonText] = useState('fa fa-microphone fa-2x color-red');
+  const [micColor, setMicColor] = useState('white');    
 
   return (
     <>
       <Particle></Particle>
       <div className="container">
-        <h1 className="heading">Samvadhini</h1>
+      <h1 className='heading'>Samvadhini</h1>
         <div className="box">
-          <div className="instr">
+          <div className='instr'>
             <h2>Instructions</h2>
             <li>Click on the mic button when you are ready to speak</li>
             <li>Click on submit button when you are done speaking</li>
@@ -93,11 +99,9 @@ function Model() {
           </div>
           {isListening ? <span></span> : <span></span>}
           <div className="text-and-btn">
-            <div className="wrap-p">
-              <p>{text}</p>
-            </div>
-            <button onClick={() => setIsListening((prevState) => !prevState)}>
-              <i class="fa fa-microphone fa-2x"></i>
+            <div className="wrap-p"><p>{text}</p></div>
+            <button onClick={() => setIsListening(prevState => !prevState)} >
+            <i className={`${buttonText}`} style={{color:`${micColor}`}} ></i>
             </button>
           </div>
           <div className="submit-btn">
@@ -107,18 +111,18 @@ function Model() {
           </div>
         </div>
         <div className="box">
-          <h2 className="result-txt">Result</h2>
+          <h2 className='result-txt'>Result</h2>
           <div className="result-box">
             <p>{answer}</p>
             <p>{meta}</p>
           </div>
         </div>
-        <div className="finish-btn">
-          <button onClick={navtu}>Finish</button>
+        <div className='finish-btn'>
+            <button onClick={navtu}>Finish</button>
         </div>
       </div>
     </>
-  );
+  )
 }
 
 export default Model;
