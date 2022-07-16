@@ -1,19 +1,19 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Thanks =() =>{
-const navigation = useNavigate();
-useEffect(() =>{
+const Thanks = () => {
+  const navigation = useNavigate();
+  useEffect(() => {
     setTimeout(() => {
-        navigation('/')
+      navigation("/");
     }, 10000);
-})
-    return (
-        <>
-            <h3>Thanks for using samvadhini</h3>
-        </>
-    )
-}
+  });
+  return (
+    <>
+      <h3>Thanks for using samvadhini</h3>
+    </>
+  );
+};
 
 export default Thanks;
