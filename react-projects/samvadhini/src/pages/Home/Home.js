@@ -4,14 +4,14 @@ import Particle from '../../components/Particle';
 import Typed from "typed.js";
 import { useEffect, useRef } from "react";
 import './Home.css'
-import logo from '../../assets/mitLogo.png'
+import logo from '../../assets/mitLogo.webp'
 const Home=()=> {
 
   const el = useRef(null);
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ["Welcome to Samvadhini","How do we help you"], // Strings to display
+      strings: ["Welcome to Samvadhini","How can we help you"], // Strings to display
       // Speed settings, try diffrent values untill you get good results
       startDelay: 300,
       typeSpeed: 150,
@@ -42,7 +42,7 @@ const Home=()=> {
     <>
     <Particle></Particle>
     <div className='home'>
-        <div className="row1"><img src={logo} alt="" /></div>
+        <div className="row1"><img src={logo} alt="MITWPU" /></div>
         <div className="row2">
           <h1 className='welcome'><span ref={el}></span></h1>
           <h4 className='select-text'>Select a language</h4>

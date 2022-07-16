@@ -7,6 +7,7 @@ const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogni
   mic.continuous = true
   mic.interimResults = true
 
+
 function Model() {
   const [isListening, setIsListening] = useState(false)
   const [text, setText] = useState(null)
@@ -18,8 +19,7 @@ function Model() {
   mic.lang = location.state.language;
   useEffect(() => {
     handleListen();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isListening])
+  }, [isListening]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleListen = () => {
     if (isListening) {
@@ -65,7 +65,7 @@ function Model() {
     console.log(data);
     setTimeout(() => {
         navigation('/thankyou')
-    },10000 );
+    },120000 );
     setAnswer(data.documents[0].content);
     setMeta(data.documents[0].meta.answer);
   } 
@@ -83,29 +83,35 @@ function Model() {
     <>
       <Particle></Particle>
       <div className="container">
-      <h1>Samvadhini</h1>
+      <h1 className='heading'>Samvadhini</h1>
         <div className="box">
-          <h2>Instructions</h2>
-          <ol>
-          <li>Click on the mic button when you are ready to speak</li>
-          <li>Click on submit button when you are done speaking</li>
-          <li>Click on Finish when your doubt has been answered</li>
-          </ol>
+          <div className='instr'>
+            <h2>Instructions</h2>
+            <li>Click on the mic button when you are ready to speak</li>
+            <li>Click on submit button when you are done speaking</li>
+            <li>Click on Finish when your doubt has been answered</li>
+          </div>
           {isListening ? <span></span> : <span></span>}
-          <button onClick={handleSaveText} disabled={!text}>
-            Submit
-          </button>
-          <button onClick={() => setIsListening(prevState => !prevState)}>
-            Start/Stop
-          </button>
-          <p>{text}</p>
+          <div className="text-and-btn">
+            <div className="wrap-p"><p>{text}</p></div>
+            <button onClick={() => setIsListening(prevState => !prevState)}>
+            <i class="fa fa-microphone fa-2x"></i>
+            </button>
+          </div>
+          <div className="submit-btn">
+            <button onClick={handleSaveText} disabled={!text}>
+              Submit
+            </button>
+          </div>
         </div>
         <div className="box">
-          <h2>Result</h2>
-          <p>{answer}</p>
-          <p>{meta}</p>
+          <h2 className='result-txt'>Result</h2>
+          <div className="result-box">
+            <p>{answer}</p>
+            <p>{meta}</p>
+          </div>
         </div>
-        <div>
+        <div className='finish-btn'>
             <button onClick={navtu}>Finish</button>
         </div>
       </div>

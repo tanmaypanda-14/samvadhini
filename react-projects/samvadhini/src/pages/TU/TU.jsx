@@ -7,7 +7,7 @@ const navigation = useNavigate();
 useEffect(() =>{
     setTimeout(() => {
         navigation('/')
-    }, 3000);
+    }, 10000);
 })
     return (
         <>
