@@ -18,6 +18,7 @@ function Model() {
   mic.lang = location.state.language;
   useEffect(() => {
     handleListen();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isListening])
 
   const handleListen = () => {
