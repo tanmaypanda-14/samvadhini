@@ -18,7 +18,7 @@ const Widget = ({ type }) => {
         isMoney: false,
         link: (
           <Link to="/users" style={{ textDecoration: "" }}>
-          View last 10 users
+          View users
           </Link>
         ),
         icon: (
@@ -38,7 +38,7 @@ const Widget = ({ type }) => {
         isMoney: false,
         link: (
           <Link to="/documents" style={{ textDecoration: "" }}>
-          View available documents
+          View downloaded documents
           </Link>
         ),
         icon: (

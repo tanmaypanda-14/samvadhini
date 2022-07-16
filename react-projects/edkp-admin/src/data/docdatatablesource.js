@@ -12,22 +12,22 @@ export const docColumns = [
     },
   
     {
-      field: "count",
-      headerName: "Requests till date",
+      field: "user",
+      headerName: "Requested by ",
       width: 150,
     },
-    {
-      field: "status",
-      headerName: "Status",
-      width: 160,
-      renderCell: (params) => {
-        return (
-          <div className={`cellWithavailabiltity ${params.row.status}`}>
-            {params.row.status}
-          </div>
-        );
-      },
-    },
+    // {
+    //   field: "status",
+    //   headerName: "Status",
+    //   width: 160,
+    //   renderCell: (params) => {
+    //     return (
+    //       <div className={`cellWithavailabiltity ${params.row.status}`}>
+    //         {params.row.status}
+    //       </div>
+    //     );
+    //   },
+    // },
   ];
   
   //temporary data
@@ -37,69 +37,69 @@ export const docColumns = [
         documents: "test1",
         status: "available",
         cost: 100,
-        count: 35,
+        user: 1032210652,
     },
     {
         id: 2,
         documents: "test1",
         status: "available",
         cost: 100,
-        count: 35,
+        user: 1032210652,
     },
     {
         id: 3,
         documents: "test1",
         status: "unavailable",
         cost: 100,
-        count: 35,
+        user: 1032210652,
     },
     {
         id: 4,
         documents: "test1",
         status: "available",
         cost: 100,
-        count: 35,
+        user: 1032210652,
     },
     {
         id: 5,
         documents: "test1",
         status: "available",
         cost: 100,
-        count: 35,
+        user: 1032210652,
     },
     {
         id: 6,
         documents: "test1",
         status: "available",
         cost: 100,
-        count: 35,
+        user: 1032210652,
     },
     {
         id: 7,
         documents: "test1",
         status: "available",
         cost: 100,
-        count: 35,
+        user: 1032210652,
     },
     {
         id: 8,
         documents: "test1",
         status: "available",
         cost: 100,
-        count: 35,
+        user: 1032210652,
     },
     {
         id: 9,
         documents: "test1",
         status: "available",
         cost: 100,
-        count: 35,
+        user: 1032210652,
     },
     {
         id: 10,
         documents: "test1",
         status: "available",
         cost: 100,
-        count: 35,
+        user: 1032210652,
     },
   ];

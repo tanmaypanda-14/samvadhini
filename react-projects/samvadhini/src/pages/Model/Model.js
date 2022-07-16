@@ -7,7 +7,6 @@ const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogni
   mic.continuous = true
   mic.interimResults = true
 
-
 function Model() {
   const [isListening, setIsListening] = useState(false)
   const [text, setText] = useState(null)
