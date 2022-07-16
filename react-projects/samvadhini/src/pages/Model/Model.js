@@ -69,19 +69,7 @@ function Model() {
     setAnswer(data.documents[0].content);
     setMeta(data.documents[0].meta.answer);
   } 
-
-  /*const api_response = () =>{
-
-    var jstr = JSON.stringify({'msg':'पिता का नाम गलत'})
-            axios.post('http://localhost:5000/query',
-                        jstr,
-                        {headers: { 'Content-Type':'application/json' }}   
-            ).then((response) =>{
-              console.log(response.json);
-            })
-    
-  }*/
-
+  
   const handleSaveText = () => {
     setSavedTexts([...savedTexts, text])
     api_response();    
