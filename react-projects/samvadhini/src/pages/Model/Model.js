@@ -67,11 +67,11 @@ function Model() {
     const response = await fetch("/query", requestoptions);
     const data = await response.json();
     console.log(data);
-    setTimeout(() => {
-      navigation("/thankyou");
-    }, 120000);
     setAnswer(data.documents[0].content);
     setMeta(data.documents[0].meta.answer);
+    // setTimeout(() => {
+    //   navigation("/thankyou");
+    // }, 120000);
   };
 
   const handleSaveText = () => {

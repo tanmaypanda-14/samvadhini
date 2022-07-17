@@ -8,23 +8,23 @@ import './tu.css'
 
 const Thanks =() =>{
 const navigation = useNavigate();
-useEffect(() =>{
-    setTimeout(() => {
-        navigation('/')
-    }, 10000);
-})
+// useEffect(() =>{
+//     setTimeout(() => {
+//         navigation('/')
+//     }, 10000);
+// })
 
 const el = useRef(null);
 
 useEffect(() => {
   const typed = new Typed(el.current, {
-    strings: ["Thank you for using Samvadhini"], // Strings to display
+    strings: ["Thank you for using Samvadhini","Click on finish to go back to homepage"], // Strings to display
     // Speed settings, try diffrent values untill you get good results
     startDelay: 300,
     typeSpeed: 150,
     backSpeed: 50,
     backDelay: 100,
-    // loop: true,
+    loop: true,
     showCursor: true,
     cursorChar: "_"
   });
