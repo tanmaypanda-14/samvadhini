@@ -65,7 +65,7 @@ function Particle() {
             width: 1,
           },
           collisions: {
-            enable: true,
+            enable: false,
           },
           move: {
             direction: "none",
@@ -80,7 +80,7 @@ function Particle() {
           number: {
             density: {
               enable: true,
-              area: 800,
+              area: 700,
             },
             value: 80,
           },

@@ -48,7 +48,12 @@ const Home = () => {
           <h1 className="welcome">
             <span ref={el}></span>
           </h1>
+          <br></br>
+          <br></br>
           <h4 className="select-text">Select a language</h4>
+          <br></br>
+          <br></br>
+          <br></br>
           <div className="btn">
             <button onClick={handleEng}>ENGLISH</button>
             <button onClick={handleHin}>हिन्दी</button>

@@ -5,17 +5,16 @@ from haystack.nodes import TfidfRetriever
 from haystack.pipelines import ExtractiveQAPipeline
 from flask import Flask, make_response, request
 from googletrans import Translator
-from flask_cors import CORS
+import requests
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 CORS(app)
 app.config["CORS_HEADERS"] = "Content-Type"
 
-
 def gen_result(text):
     # text = "ळ " + text
     translator = Translator()
-    detect_lang = translator.detect(text)
     dt1 = translator.translate(text, dest="en")
     translated_query = dt1.text
 
@@ -24,16 +23,7 @@ def gen_result(text):
         query=translated_query,
         params={"Retriever": {"top_k": 10}, "Reader": {"top_k": 5}},
     )
-    print(type(prediction))
-    print(prediction)
-    documents = prediction["documents"]
-    final_response = []
-    for doc in documents:
-        question = translator.translate(doc.content, dest=detect_lang.lang).text
-        answer = translator.translate(doc.meta["answer"], dest=detect_lang.lang).text
-        final_response.append({"question": question, "answer": answer})
-
-    return {"documents": final_response}
+    return prediction
 
 
 debug = True  # set to True to see the request and response
@@ -59,7 +49,12 @@ def query():
 if __name__ == "__main__":
     document_store = InMemoryDocumentStore()
     retriever = TfidfRetriever(document_store=document_store)
-    reader = FARMReader(model_name_or_path="deepset/roberta-base-squad2", use_gpu=False)
+
+    reader = FARMReader(model_name_or_path="deepset/roberta-base-squad2", use_gpu=True)
+    temp = requests.get(
+        "https://raw.githubusercontent.com/uneconomicalfairy14/samvadhini/master/api/faq.csv"
+    )
+    open("faq.csv", "wb").write(temp.content)
     df = pd.read_csv("faq.csv")
     df.fillna(value="", inplace=True)
     df["question"] = df["question"].apply(lambda x: x.strip())
