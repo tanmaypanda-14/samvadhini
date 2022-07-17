@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./model.css";
 import Particle from "../../components/Particle";
+import Altresponse from "../../components/altresponse/Altresponse";
+
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
 const mic = new SpeechRecognition();
@@ -14,8 +16,10 @@ function Model() {
   const [savedTexts, setSavedTexts] = useState([]);
   const [answer, setAnswer] = useState("");
   const [meta, setMeta] = useState("");
+  const [alt, setAlt] = useState("");
   const location = useLocation();
   const navigation = useNavigate();
+  const [buttonPopup, setButtonPopup] = useState(false);
   mic.lang = location.state.language;
   useEffect(() => {
     handleListen();
@@ -69,6 +73,7 @@ function Model() {
     console.log(data);
     setAnswer(data.documents[0].content);
     setMeta(data.documents[0].meta.answer);
+    setAlt(data.documents[1].meta.answer);
     // setTimeout(() => {
     //   navigation("/thankyou");
     // }, 120000);
@@ -116,6 +121,13 @@ function Model() {
             <p>{answer}</p>
             <p>{meta}</p>
           </div>
+        </div>
+        <div>
+          <button className="alt-btn" onClick={() => setButtonPopup(true) }>alt</button>
+          <Altresponse trigger={buttonPopup} setTrigger={setButtonPopup}>
+            <h1>popup</h1>
+            <p>{alt}</p>
+          </Altresponse>
         </div>
         <div className='finish-btn'>
             <button onClick={navtu}>Finish</button>
