@@ -1,0 +1,111 @@
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  width: 80vw;
+  height: auto;
+  border-radius: 20px;
+}
+
+.heading {
+  font-family: "Oxanium", cursive;
+  text-align: center;
+  font-size: 3rem;
+  letter-spacing: 3px;
+}
+.instr {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  margin-left: 2%;
+}
+
+.instr li {
+  list-style-type: decimal;
+}
+
+.text-and-btn {
+  margin: 1% 2% 1% 2%;
+  display: flex;
+}
+
+.text-and-btn .wrap-p {
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #004080;
+}
+
+.wrap-p p {
+  width: auto;
+}
+
+.text-and-btn button {
+  display: block;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: #004080;
+}
+
+.text-and-btn button:hover {
+  display: block;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 2px solid #004080;
+  background-color: white;
+}
+
+i {
+  color: white;
+}
+
+.text-and-btn button:hover i {
+  color: #004080;
+}
+
+.submit-btn {
+  margin: 1% 2% 1% 2%;
+  display: flex;
+  justify-content: center;
+}
+
+.submit-btn button {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background-color: #004080;
+  color: white;
+}
+
+.result-txt {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  margin-left: 2%;
+}
+
+.result-box {
+  height: auto;
+  margin: 1% 2% 1% 2%;
+  padding: 1% 2% 1% 2%;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.finish-btn {
+  margin: 1% 2% 1% 2%;
+  display: flex;
+  justify-content: center;
+}
+.finish-btn button {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background-color: #004080;
+  color: white;
+}
