@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./model.css";
 import Particle from "../../components/Particle";
 import Altresponse from "../../components/altresponse/Altresponse";
+import Texttospeech from "../../components/texttospeech/Texttospeech";
 
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -132,6 +133,7 @@ function Model() {
         <div className='finish-btn'>
             <button onClick={navtu}>Finish</button>
         </div>
+        <Texttospeech/>
       </div>
     </>
   )
