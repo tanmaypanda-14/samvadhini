@@ -1,8 +1,10 @@
 import { useEffect } from "react"
 
-function Texttospeech() {
+function Texttospeech(props) {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const msg = new SpeechSynthesisUtterance()
-  msg.text = "Hello World"
+  console.log(props.msg);
+  msg.text = props.msg;
 
   useEffect(() => {
     window.speechSynthesis.speak(msg)
@@ -10,7 +12,6 @@ function Texttospeech() {
 
   return (
     <div>
-        Test
     </div>
   )
 }

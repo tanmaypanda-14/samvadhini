@@ -26,6 +26,10 @@ function Model() {
     handleListen();
   }, [isListening]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  const handleChange = (e) => {
+    setText(e.target.value);
+  }
+
   const handleListen = () => {
     if (isListening) {
       mic.start();
@@ -105,7 +109,7 @@ function Model() {
           </div>
           {isListening ? <span></span> : <span></span>}
           <div className="text-and-btn">
-            <div className="wrap-p"><p>{text}</p></div>
+            <div className="wrap-p"><input value={text} placeholder={text} onChange={handleChange}/></div>
             <button onClick={() => setIsListening(prevState => !prevState)} >
             <i className={`${buttonText}`} style={{color:`${micColor}`}} ></i>
             </button>
@@ -121,6 +125,7 @@ function Model() {
           <div className="result-box">
             <p>{answer}</p>
             <p>{meta}</p>
+            <Texttospeech msg={meta}/>
           </div>
         </div>
         <div>
@@ -133,7 +138,7 @@ function Model() {
         <div className='finish-btn'>
             <button onClick={navtu}>Finish</button>
         </div>
-        <Texttospeech/>
+        {/* <Texttospeech/> */}
       </div>
     </>
   )
