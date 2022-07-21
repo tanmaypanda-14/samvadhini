@@ -3,7 +3,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./model.css";
 import Particle from "../../components/Particle";
 import Altresponse from "../../components/altresponse/Altresponse";
-import Texttospeech from "../../components/texttospeech/Texttospeech";
 
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -26,23 +25,19 @@ function Model() {
     handleListen();
   }, [isListening]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const handleChange = (e) => {
-    setText(e.target.value);
-  }
-
   const handleListen = () => {
     if (isListening) {
       mic.start();
-      setButtonText('fa fa-microphone fa-2x')
-      setMicColor('red')
+      setButtonText("fa fa-microphone fa-2x");
+      setMicColor("red");
       mic.onend = () => {
         console.log("continue..");
         mic.start();
       };
     } else {
       mic.stop();
-      setButtonText('fa fa-microphone fa-2x color-red')
-      setMicColor('white')
+      setButtonText("fa fa-microphone fa-2x color-red");
+      setMicColor("white");
       mic.onend = () => {
         console.log("Stopped Mic on Click");
       };
@@ -84,24 +79,35 @@ function Model() {
     // }, 120000);
   };
 
-  const handleSaveText = () => {
+  const handleSaveText = (e) => {
     setSavedTexts([...savedTexts, text]);
     api_response();
+    setText(e.target.value);
+    api_response();
+    console.log(text);
+  };
+
+  const text_to_speech = () => {
+    const msg = new SpeechSynthesisUtterance();
+    msg.text = meta;
+    window.speechSynthesis.speak(msg);
   };
 
   const navtu = () => {
     navigation("/thankyou");
   };
-  const [buttonText, setButtonText] = useState('fa fa-microphone fa-2x color-red');
-  const [micColor, setMicColor] = useState('white');    
+  const [buttonText, setButtonText] = useState(
+    "fa fa-microphone fa-2x color-red"
+  );
+  const [micColor, setMicColor] = useState("white");
 
   return (
-    <>
+    <div className="Model">
       <Particle></Particle>
       <div className="container">
-      <h1 className='heading'>Samvadhini</h1>
+        <h1 className="heading">Samvadhini</h1>
         <div className="box">
-          <div className='instr'>
+          <div className="instr">
             <h2>Instructions</h2>
             <li>Click on the mic button when you are ready to speak</li>
             <li>Click on submit button when you are done speaking</li>
@@ -109,9 +115,14 @@ function Model() {
           </div>
           {isListening ? <span></span> : <span></span>}
           <div className="text-and-btn">
-            <div className="wrap-p"><input value={text} placeholder={text} onChange={handleChange}/></div>
-            <button onClick={() => setIsListening(prevState => !prevState)} >
-            <i className={`${buttonText}`} style={{color:`${micColor}`}} ></i>
+            <div className="wrap-p">
+              <input placeholder={text} value={text}></input>
+            </div>
+            <button onClick={() => setIsListening((prevState) => !prevState)}>
+              <i
+                className={`${buttonText}`}
+                style={{ color: `${micColor}` }}
+              ></i>
             </button>
           </div>
           <div className="submit-btn">
@@ -121,27 +132,30 @@ function Model() {
           </div>
         </div>
         <div className="box">
-          <h2 className='result-txt'>Result</h2>
+          <h2 className="result-txt">Result</h2>
           <div className="result-box">
             <p>{answer}</p>
             <p>{meta}</p>
-            <Texttospeech msg={meta}/>
           </div>
         </div>
-        <div>
-          <button className="alt-btn" onClick={() => setButtonPopup(true) }>alt</button>
-          <Altresponse trigger={buttonPopup} setTrigger={setButtonPopup}>
-            <h1>popup</h1>
-            <p>{alt}</p>
-          </Altresponse>
+        <div className="finish-btn">
+          <button onClick={text_to_speech}>
+            <i
+              className="fa-solid fa-speaker"
+              style={{ color: `${micColor}` }}
+            ></i>
+          </button>
+          <button className="alt-btn" onClick={() => setButtonPopup(true)}>
+            Alt
+          </button>
+          <button onClick={navtu}>Finish</button>
         </div>
-        <div className='finish-btn'>
-            <button onClick={navtu}>Finish</button>
-        </div>
-        {/* <Texttospeech/> */}
       </div>
-    </>
-  )
+      <Altresponse trigger={buttonPopup} setTrigger={setButtonPopup}>
+        <p>{alt}</p>
+      </Altresponse>
+    </div>
+  );
 }
 
 export default Model;

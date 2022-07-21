@@ -1,4 +1,4 @@
-.container {
+.Model .container {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -10,40 +10,49 @@
   border-radius: 20px;
 }
 
-.heading {
+.Model .heading {
   font-family: "Oxanium", cursive;
   text-align: center;
   font-size: 3rem;
   letter-spacing: 3px;
 }
-.instr {
+.Model .instr {
   font-family: "Roboto", sans-serif;
   font-style: italic;
   margin-left: 2%;
 }
 
-.instr li {
+.Model .instr li {
   list-style-type: decimal;
 }
 
-.text-and-btn {
+.Model .text-and-btn {
   margin: 1% 2% 1% 2%;
   display: flex;
 }
 
-.text-and-btn .wrap-p {
+.Model .text-and-btn .wrap-p {
   width: 80vw;
   display: flex;
   justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid #004080;
+  align-items: flex-end;
+  /* border-bottom: 1px solid #004080; */
 }
 
-.wrap-p p {
+.Model .wrap-p input {
   width: auto;
+  width: 60vw;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid #004080;
+  outline: none;
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  padding-bottom: 0.5%;
 }
 
-.text-and-btn button {
+.Model .text-and-btn button {
   display: block;
   height: 50px;
   width: 50px;
@@ -52,7 +61,7 @@
   background-color: #004080;
 }
 
-.text-and-btn button:hover {
+.Model .text-and-btn button:hover {
   display: block;
   height: 50px;
   width: 50px;
@@ -61,21 +70,21 @@
   background-color: white;
 }
 
-i {
+.Model i {
   color: white;
 }
 
-.text-and-btn button:hover i {
+.Model .text-and-btn button:hover i {
   color: #004080;
 }
 
-.submit-btn {
+.Model .submit-btn {
   margin: 1% 2% 1% 2%;
   display: flex;
   justify-content: center;
 }
 
-.submit-btn button {
+.Model .submit-btn button {
   padding: 12px;
   border-radius: 10px;
   border: none;
@@ -83,13 +92,21 @@ i {
   color: white;
 }
 
-.result-txt {
+.Model .submit-btn button:hover {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #004080;
+  background-color:  white;
+  color: #004080;
+}
+
+.Model .result-txt {
   font-family: "Roboto", sans-serif;
   font-style: italic;
   margin-left: 2%;
 }
 
-.result-box {
+.Model .result-box {
   height: auto;
   margin: 1% 2% 1% 2%;
   padding: 1% 2% 1% 2%;
@@ -97,12 +114,30 @@ i {
   border-radius: 20px;
 }
 
-.finish-btn {
+.Model .finish-btn {
   margin: 1% 2% 1% 2%;
   display: flex;
   justify-content: center;
+  gap: 2%;
 }
-.finish-btn button {
+.Model .finish-btn button {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background-color: #004080;
+  color: white;
+}
+
+.Model .finish-btn button:hover{
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #004080;
+  background-color:  white;
+  color: #004080;
+}
+
+.text-to-speech button{
+
   padding: 12px;
   border-radius: 10px;
   border: none;
