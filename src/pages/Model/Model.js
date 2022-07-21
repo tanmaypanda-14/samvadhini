@@ -84,6 +84,12 @@ function Model() {
     api_response();
   };
 
+  const text_to_speech = () => {
+    const msg = new SpeechSynthesisUtterance()
+    msg.text = meta;
+    window.speechSynthesis.speak(msg)
+  }
+
   const navtu = () => {
     navigation("/thankyou");
   };
@@ -120,6 +126,7 @@ function Model() {
           <div className="result-box">
             <p>{answer}</p>
             <p>{meta}</p>
+            
           </div>
         </div>
         <div>
@@ -131,6 +138,11 @@ function Model() {
         </div>
         <div className='finish-btn'>
             <button onClick={navtu}>Finish</button>
+        </div>
+        <div className="text-to-speech">
+            <button onClick={text_to_speech}> 
+              <i className={`${buttonText}`} style={{color:`${micColor}`}} ></i>
+            </button>
         </div>
       </div>
     </>

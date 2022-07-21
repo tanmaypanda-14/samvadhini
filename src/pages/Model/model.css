@@ -109,3 +109,13 @@ i {
   background-color: #004080;
   color: white;
 }
+
+.text-to-speech button{
+
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background-color: #004080;
+  color: white;
+
+}
