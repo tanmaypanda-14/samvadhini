@@ -11,6 +11,7 @@ app = Flask(__name__)
 CORS(app)
 app.config["CORS_HEADERS"] = "Content-Type"
 
+# def fetch_trans():
 
 def gen_result(text):
     # text = "ळ " + text
@@ -22,11 +23,12 @@ def gen_result(text):
     global pipe
     prediction = pipe.run(
         query=translated_query,
-        params={"Retriever": {"top_k": 10}, "Reader": {"top_k": 5}},
+        params={"Retriever": {"top_k": 10}, "Reader": {"top_k": 5}}, #optimization parameters
     )
     print(type(prediction))
-    print(prediction)
+    # print(prediction)
     documents = prediction["documents"]
+    print(documents)
     final_response = []
     for doc in documents:
         question = translator.translate(doc.content, dest=detect_lang.lang).text
@@ -50,7 +52,7 @@ def debug_requests():
 @app.route("/query", methods=["GET", "POST"])
 def query():
     debug_requests()
-    request_data = request.get_json()
+    request_data = request.get_json() # ["msg":"query"]
     text = request_data["msg"]
     result = gen_result(text)
     return make_response(result)

@@ -1,4 +1,4 @@
-0,question,answer,category
+id,question,answer,category
 1,What if I need to know my correct CGPA?,CGPA is seen on the grade card. The CGPA count can be verified by referring to the passing    criteria    mentioned    in    Exam    Ordinance    2020(https://mitwpu.edu.in/examination/images/documents/Examination Ordinances 2020.pdf),grade card
 2,I have cleared my backlog but the result sheet does not show GPA and CGPA. Why?," GPA and CGPA are not mentioned on backlog grade cards. GPA, CGPA will be highlighted on regular trimester grade card only.",grade card
 3,"I have cleared my backlog, but the result on ERP is not updated .It still shows earlier CGPA.As a result, it is affecting my CGPA of next trimesters also. How do I get it corrected?"," Grade card shows first attempt GPA and CGPA only. Hence, even if you have cleared backlog, improved CGPA for that trimester will not be seen on grade card.",grade card
