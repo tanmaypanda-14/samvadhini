@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./model.css";
-import Particle from "../../components/Particle";
+// import Particle from "../../components/Particle";
 import Altresponse from "../../components/altresponse/Altresponse";
 
 const SpeechRecognition =
@@ -71,9 +71,9 @@ function Model() {
     const response = await fetch("/query", requestoptions);
     const data = await response.json();
     console.log(data);
-    setAnswer(data.documents[0].content);
-    setMeta(data.documents[0].meta.answer);
-    setAlt(data.documents[1].meta.answer);
+    setAnswer(data.documents[0].question);
+    setMeta(data.documents[0].answer);
+    setAlt(data.documents[1].answer);
     // setTimeout(() => {
     //   navigation("/thankyou");
     // }, 120000);
@@ -103,7 +103,7 @@ function Model() {
 
   return (
     <div className="Model">
-      <Particle></Particle>
+      {/* <Particle></Particle> */}
       <div className="container">
         <h1 className="heading">Samvadhini</h1>
         <div className="box">
