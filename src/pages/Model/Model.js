@@ -87,6 +87,27 @@ function Model() {
     console.log(text);
   };
 
+  const handleLangChange = async ()=>{
+    const requestoptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({ msg: text }),
+    };
+    const response = await fetch("/query", requestoptions);
+    const data = await response.json();
+    if(mic.lang === "en-IN"){
+      setMeta(data.documents[0].answer_hi);
+    }
+    else if(mic.lang === "hi-IN"){
+      setMeta(data.documents[0].answer_mr);
+    }else{
+      setMeta(data.documents[0].answer);
+    }
+  }
+
   const text_to_speech = () => {
     const msg = new SpeechSynthesisUtterance();
     msg.text = meta;
@@ -139,9 +160,12 @@ function Model() {
           </div>
         </div>
         <div className="finish-btn">
+        <button onClick={handleLangChange}>
+          Change language
+          </button>
           <button onClick={text_to_speech}>
             <i
-              className="fa-solid fa-speaker"
+              className="fa fa-speaker"
               style={{ color: `${micColor}` }}
             ></i>
           </button>
