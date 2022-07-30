@@ -34,8 +34,8 @@ def gen_result(text):
     prediction = pipe.run(
         query=translated_query,
         params={
-            "Retriever": {"top_k": 10},
-            "Reader": {"top_k": 5},
+            "Retriever": {"top_k": 3},
+            "Reader": {"top_k": 1},
         },  # optimization parameters
     )
     print(type(prediction))

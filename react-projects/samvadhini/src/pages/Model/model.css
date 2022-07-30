@@ -43,13 +43,18 @@
   width: auto;
   width: 60vw;
   text-align: center;
-  border: none;
-  border-bottom: 1px solid #004080;
+  border-radius: 10px;
+  /* border: none; */
+  border: 1px solid grey;
   outline: none;
   font-size: 1.5rem;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
-  padding-bottom: 0.5%;
+  padding :0.5%;
+  margin: auto;
+  justify-content: center;
+  display: inline;
+  /* padding-bottom: 0.5%s; */
 }
 
 .Model .text-and-btn button {
