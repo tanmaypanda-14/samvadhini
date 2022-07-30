@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./model.css";
 // import Particle from "../../components/Particle";
 import Altresponse from "../../components/altresponse/Altresponse";
+import Select from 'react-select';
 
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -20,6 +21,12 @@ function Model() {
   const location = useLocation();
   const navigation = useNavigate();
   const [buttonPopup, setButtonPopup] = useState(false);
+  const [data1, setData1] = useState("");
+  // const [inputValue, setInputValue] = useState('');
+  // const [selectedValue, setselectedValue] = useState("en-IN")
+  const [selectedOpt, setSelectedOpt] = useState([]);
+ 
+
   mic.lang = location.state.language;
   useEffect(() => {
     handleListen();
@@ -71,8 +78,12 @@ function Model() {
     const response = await fetch("/query", requestoptions);
     const data = await response.json();
     console.log(data);
+    setData1(data)
     setAnswer(data.documents[0].question);
-    setMeta(data.documents[0].answer);
+      if(mic.lang==="en-IN"){setMeta(data.documents[0].answer);}
+      else if(mic.lang === "hi-IN"){setMeta(data.documents[0].answer_hi);}
+      else if(mic.lang === "mr-IN"){setMeta(data.documents[0].answer_mr);} 
+    
     setAlt(data.documents[1].answer);
     // setTimeout(() => {
     //   navigation("/thankyou");
@@ -87,6 +98,47 @@ function Model() {
     console.log(text);
   };
 
+  // const handleLangChange = ()=>{
+  //   if(mic.lang === "en-IN"){
+  //     setMeta(data1.documents[0].answer_hi)
+  //     mic.lang="hi-IN";
+  //   }else if (mic.lang === "hi-IN"){
+  //     setMeta(data1.documents[0].answer_mr)
+  //     mic.lang="mr-IN"
+  //   }else if (mic.lang === "mr-IN"){
+  //     setMeta(data1.documents[0].answer)
+  //     mic.lang="en-IN"
+  //   }
+  // }
+
+  // const handleInputChange = inputValue =>{
+  //   setInputValue(inputValue);
+  // }
+
+  const handleChange = (selectedOption) => { 
+    setSelectedOpt(selectedOption)
+  }
+  useEffect(() => {
+    console.log(selectedOpt.value);
+      if(data1)
+      if(selectedOpt.value==="en-IN"){
+        setMeta(data1.documents[0].answer);
+      }
+      else if(selectedOpt.value === "hi-IN"){
+        setMeta(data1.documents[0].answer_hi)
+      }else if(selectedOpt.value === "mr-IN"){
+        setMeta(data1.documents[0].answer_mr)
+      }
+  }, [selectedOpt]);
+
+    // useEffect(() => {
+    //   if(values==="en-IN"){
+    //     setMeta(data1.documents[0].answer);
+    //   }
+    //   else if(values === "hi-IN"){
+    //     setMeta(data1.documents[0].answer_hi)
+    //   }
+    // }, [values])
   const text_to_speech = () => {
     const msg = new SpeechSynthesisUtterance();
     msg.text = meta;
@@ -100,6 +152,11 @@ function Model() {
     "fa fa-microphone fa-2x color-red"
   );
   const [micColor, setMicColor] = useState("white");
+  const actions = [
+    {label:"English", value: "en-IN"},
+    {label:"Hindi", value: "hi-IN"},
+    {label:"Marathi",value: "mr-IN"}
+  ]
 
   return (
     <div className="Model">
@@ -139,10 +196,14 @@ function Model() {
           </div>
         </div>
         <div className="finish-btn">
-          <button onClick={text_to_speech}>
+        <Select options={actions} defaultValue={()=>{
+          if(mic.lang==="en-IN"){return actions[0]}
+          else if(mic.lang === "hi-IN"){return actions[1]}
+          else if(mic.lang === "mr-IN"){return actions[2]} 
+        }} onChange={handleChange} ></Select>
+          <button onClick={text_to_speech} id="text-to-speech-btn">
             <i
-              className="fa-solid fa-speaker"
-              style={{ color: `${micColor}` }}
+              className="fa-solid fa-volume-high"
             ></i>
           </button>
           <button className="alt-btn" onClick={() => setButtonPopup(true)}>
