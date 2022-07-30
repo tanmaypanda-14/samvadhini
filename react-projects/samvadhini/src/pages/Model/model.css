@@ -11,7 +11,7 @@
 }
 
 .Model .heading {
-  font-family: "Oxanium", cursive;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
   font-size: 3rem;
   letter-spacing: 3px;
@@ -47,7 +47,7 @@
   border-bottom: 1px solid #004080;
   outline: none;
   font-size: 1.5rem;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: bold;
   padding-bottom: 0.5%;
 }
@@ -101,7 +101,7 @@
 }
 
 .Model .result-txt {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-style: italic;
   margin-left: 2%;
 }
@@ -119,6 +119,7 @@
   display: flex;
   justify-content: center;
   gap: 2%;
+  font-family: 'Poppins', sans-serif;
 }
 .Model .finish-btn button {
   padding: 12px;
@@ -126,6 +127,7 @@
   border: none;
   background-color: #004080;
   color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
 .Model .finish-btn button:hover{
