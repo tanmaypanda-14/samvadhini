@@ -21,7 +21,7 @@ function Model() {
   const location = useLocation();
   const navigation = useNavigate();
   const [buttonPopup, setButtonPopup] = useState(false);
-  const [data1, setData1] = useState("");
+  const [data1, setData1] = useState([]);
   // const [inputValue, setInputValue] = useState('');
   // const [selectedValue, setselectedValue] = useState("en-IN")
   const [selectedOpt, setSelectedOpt] = useState([]);
@@ -214,7 +214,7 @@ function Model() {
       </div>
       <Altresponse trigger={buttonPopup} setTrigger={setButtonPopup}>
         <p>{data1.map(e => {
-          return <li style={{ listStyleType: `decimal` }}>{e.answer ? e.answer : ""}</li>
+          return <li style={{ listStyleType: `decimal`, padding:'1%' }}>{e.answer ? e.answer : ""}</li>
         })}</p> 
         {/* {alt} */}
       </Altresponse>
