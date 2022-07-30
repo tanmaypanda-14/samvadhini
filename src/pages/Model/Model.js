@@ -78,7 +78,7 @@ function Model() {
     const response = await fetch("/query", requestoptions);
     const data = await response.json();
     console.log(data);
-    setData1(data)
+    setData1(data.documents)
     setAnswer(data.documents[0].question);
       if(mic.lang==="en-IN"){setMeta(data.documents[0].answer);}
       else if(mic.lang === "hi-IN"){setMeta(data.documents[0].answer_hi);}
@@ -122,12 +122,12 @@ function Model() {
     console.log(selectedOpt.value);
       if(data1)
       if(selectedOpt.value==="en-IN"){
-        setMeta(data1.documents[0].answer);
+        setMeta(data1[0].answer);
       }
       else if(selectedOpt.value === "hi-IN"){
-        setMeta(data1.documents[0].answer_hi)
+        setMeta(data1[0].answer_hi)
       }else if(selectedOpt.value === "mr-IN"){
-        setMeta(data1.documents[0].answer_mr)
+        setMeta(data1[0].answer_mr)
       }
   }, [selectedOpt]);
 
@@ -213,7 +213,10 @@ function Model() {
         </div>
       </div>
       <Altresponse trigger={buttonPopup} setTrigger={setButtonPopup}>
-        <p>{alt}</p>
+        <p>{data1.map(e => {
+          return <li style={{ listStyleType: `decimal` }}>{e.answer ? e.answer : ""}</li>
+        })}</p> 
+        {/* {alt} */}
       </Altresponse>
     </div>
   );
