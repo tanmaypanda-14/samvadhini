@@ -116,6 +116,10 @@ function Model() {
     window.speechSynthesis.speak(msg);
   };
 
+  const inputChange = (e) => {
+    setText(e.target.value);
+  }
+
   const navtu = () => {
     navigation("/thankyou");
   };
@@ -145,6 +149,7 @@ function Model() {
           <div className="text-and-btn">
             <div className="wrap-p">
               <input
+                onChange = {inputChange}
                 defaultValue={text || ""}
                 placeholder = {text}
                 // ref={}}
@@ -188,7 +193,7 @@ function Model() {
         </div>
       </div>
       <Altresponse trigger={buttonPopup} setTrigger={setButtonPopup}>
-        <p>{popupData.map(e => {
+        <p>{popupData.slice(1).map(e => {
           return <li key={popupData} style={{ listStyleType: `decimal`, padding: '1%' }}>{e.question ? e.question : ""}
             {e.answer ? e.answer : ""}</li>
         })}</p>
