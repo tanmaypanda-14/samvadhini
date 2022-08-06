@@ -1,3 +1,8 @@
+.Model {
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
 .Model .container {
   position: absolute;
   top: 50%;
@@ -6,31 +11,57 @@
   transform: translate(-50%, -50%);
   background: white;
   width: 80vw;
-  height: auto;
-  border-radius: 20px;
+  height: 85vh;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
 }
-
+.Model .container-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  width: 80vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 .Model .heading {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   text-align: center;
   font-size: 3rem;
   letter-spacing: 3px;
+  color: white;
+  margin-top: 6%;
+  margin-bottom: 5%;
+}
+.Model .box {
+  width: 90%;
+  background-color: white;
+  align-self: center;
+  padding: 2%;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
 }
 .Model .instr {
   font-family: "Roboto", sans-serif;
   font-style: italic;
+  font-size: 0.85rem;
   margin-left: 2%;
+  line-height: 1.3rem;
 }
-
 .Model .instr li {
   list-style-type: decimal;
 }
-
 .Model .text-and-btn {
   margin: 1% 2% 1% 2%;
   display: flex;
 }
-
 .Model .text-and-btn .wrap-p {
   width: 80vw;
   display: flex;
@@ -38,116 +69,114 @@
   align-items: flex-end;
   /* border-bottom: 1px solid #004080; */
 }
-
 .Model .wrap-p input {
   width: auto;
   width: 60vw;
   text-align: center;
-  border-radius: 10px;
-  /* border: none; */
-  border: 1px solid grey;
+  border: none;
+  border: 1px solid black;
+  border-radius: 20px;
   outline: none;
-  font-size: 1.5rem;
-  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
-  padding :0.5%;
-  margin: auto;
-  justify-content: center;
-  display: inline;
-  /* padding-bottom: 0.5%s; */
+  padding: 0.5%;
 }
-
 .Model .text-and-btn button {
   display: block;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
+  height: auto;
+  width: auto;
+  padding: 1% 1.3%;
+  border-radius: 60%;
   border: none;
-  background-color: #004080;
+  background-color: #8A2BE2;
+  font-size: 0.75rem;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
 }
-
 .Model .text-and-btn button:hover {
   display: block;
-  height: 50px;
+  height: auto;
   width: 50px;
   border-radius: 50%;
-  border: 2px solid #004080;
-  background-color: white;
+  border: 2px solid #8A2BE2;
+  background-color: rgb(173, 0, 0);
 }
-
 .Model i {
   color: white;
 }
-
 .Model .text-and-btn button:hover i {
-  color: #004080;
+  color: #8A2BE2;
 }
-
 .Model .submit-btn {
   margin: 1% 2% 1% 2%;
   display: flex;
   justify-content: center;
 }
-
+.Model .submit-btn img {
+  margin-left: 20px;
+  height: 50px;
+  width: auto;
+}
 .Model .submit-btn button {
   padding: 12px;
   border-radius: 10px;
   border: none;
-  background-color: #004080;
+  background-color: #8A2BE2;
   color: white;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
 }
-
 .Model .submit-btn button:hover {
   padding: 12px;
   border-radius: 10px;
-  border: 1px solid #004080;
-  background-color:  white;
-  color: #004080;
+  border: 1px solid #8A2BE2;
+  background-color: white;
+  color: #8A2BE2;
 }
-
 .Model .result-txt {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-style: italic;
   margin-left: 2%;
 }
-
 .Model .result-box {
   height: auto;
   margin: 1% 2% 1% 2%;
   padding: 1% 2% 1% 2%;
-  border: 1px solid black;
-  border-radius: 20px;
 }
-
 .Model .finish-btn {
   margin: 1% 2% 1% 2%;
   display: flex;
   justify-content: center;
   gap: 2%;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 5%;
 }
 .Model .finish-btn button {
   padding: 12px;
   border-radius: 10px;
   border: none;
-  background-color: #004080;
+  background-color: #8A2BE2;
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
 }
-
-.Model .finish-btn button:hover{
+.Model .finish-btn button:hover {
   padding: 12px;
   border-radius: 10px;
-  border: 1px solid #004080;
-  background-color:  white;
-  color: #004080;
+  border: 1px solid #8A2BE2;
+  background-color: white;
+  color: #8A2BE2;
 }
-
-.text-to-speech button{
-
+.Model .text-to-speech button {
   padding: 12px;
   border-radius: 10px;
   border: none;
-  background-color: #004080;
+  background-color: #8A2BE2;
   color: white;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+}
+.Model .text-to-speech button i {
+  color: aqua;
+}
+.Model .text-to-speech button:hover {
+  color: black;
 }
