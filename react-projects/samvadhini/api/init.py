@@ -8,13 +8,9 @@ from googletrans import Translator
 from flask_cors import CORS
 from utils.fb import *
 
-
 app = Flask(__name__)
 CORS(app)
 app.config["CORS_HEADERS"] = "Content-Type"
-
-
-
 
 
 def fetch_trans(question):
@@ -31,7 +27,7 @@ def fetch_trans(question):
 def gen_result(text):
     # text = "ळ " + text
     translator = Translator()
-    detect_lang = translator.detect(text)
+    detect_lang = translator.detect(text).lang
     dt1 = translator.translate(text, dest="en")
     translated_query = dt1.text
 
@@ -60,6 +56,12 @@ def gen_result(text):
                 "answer_hi": answer_hi,
             }
         )
+    logging_data = {
+        "text": text,
+        "question": final_response[0]["question"],
+        "language": detect_lang,
+    }
+    insert_log(db, logging_data)
     return {"documents": final_response}
 
 
@@ -99,4 +101,5 @@ if __name__ == "__main__":
     # temp = trans()
     # print(temp)
     app.config["JSON_AS_ASCII"] = False
+    db = init_firebase()
     app.run(debug=True, host="0.0.0.0")
