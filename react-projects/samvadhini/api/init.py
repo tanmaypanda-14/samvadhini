@@ -6,10 +6,15 @@ from haystack.pipelines import ExtractiveQAPipeline
 from flask import Flask, make_response, request
 from googletrans import Translator
 from flask_cors import CORS
+from utils.fb import *
+
 
 app = Flask(__name__)
 CORS(app)
 app.config["CORS_HEADERS"] = "Content-Type"
+
+
+
 
 
 def fetch_trans(question):
