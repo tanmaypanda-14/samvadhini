@@ -9,7 +9,7 @@
   grid-template-rows: 1fr auto 1fr;
 }
 .welcome {
-  font-family: "Oxanium", cursive;
+  font-family: "Poppins", sans-serif;
   color: white;
   text-align: center;
   font-size: 3rem;
@@ -40,12 +40,12 @@
 .btn button {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  color: #0b4b9e;
+  color: white;
   font-size: 1.4rem;
   padding: 1%;
   border-radius: 10px;
-  border: solid 3.5px #a7b3e9;
-  background-color: #a7b3e9;
+  border: solid 3.5px #8A2BE2;
+  background-color: #8A2BE2;
   transition: width 0.5s;
   /* background-repeat:no-repeat; */
 }
@@ -53,8 +53,8 @@
 .btn button:hover {
   background-color: transparent;
   background-repeat: no-repeat;
-  border: solid 3.5px #e0c9a6;
-  color: #e0c9a6;
+  border: solid 3.5px white;
+  color: white;
 }
 
 .row1 {

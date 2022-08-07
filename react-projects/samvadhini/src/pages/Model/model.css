@@ -2,6 +2,9 @@
   min-height: 100vh;
   max-width: 100vw;
   overflow-x: hidden;
+  /* background of the scrollbar except button or resizer */
+  /* scrollbar itself */
+  /* set button(top and bottom of the scrollbar) */
 }
 .Model .container {
   position: absolute;
@@ -28,8 +31,25 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  overflow-y: scroll;
   overflow-x: hidden;
+}
+.Model .container-2::-webkit-scrollbar {
+  background-color: transparent;
+  width: 10px;
+  height: 12px;
+}
+.Model .container-2::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.Model .container-2::-webkit-scrollbar-thumb {
+  background-color: #babac0;
+  border-radius: 20px;
+  border-right: 4px solid transparent;
+  background-clip: padding-box;
+}
+.Model .container-2::-webkit-scrollbar-button {
+  display: block;
+  height: 12px;
 }
 .Model .heading {
   font-family: "Poppins", sans-serif;
@@ -91,14 +111,15 @@
   border: none;
   background-color: #8A2BE2;
   font-size: 0.75rem;
+  font-weight:600;
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
 }
 .Model .text-and-btn button:hover {
   display: block;
   height: auto;
-  width: 50px;
-  border-radius: 50%;
-  border: 2px solid #8A2BE2;
+  width: auto;
+  padding: 1% 1.3%;
+  border-radius: 60%;
   background-color: rgb(173, 0, 0);
 }
 .Model i {
@@ -124,9 +145,11 @@
   background-color: #8A2BE2;
   color: white;
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+  font-weight:600;
+  font-size: 0.9rem;
 }
 .Model .submit-btn button:hover {
-  padding: 12px;
+  padding: 11px;
   border-radius: 10px;
   border: 1px solid #8A2BE2;
   background-color: white;
@@ -158,12 +181,16 @@
   color: white;
   font-family: "Poppins", sans-serif;
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+  font-weight:600;
 }
 .Model .finish-btn button:hover {
-  padding: 12px;
+  padding: 11px;
   border-radius: 10px;
   border: 1px solid #8A2BE2;
   background-color: white;
+  color: #8A2BE2;
+}
+.Model .finish-btn button:hover .fa-volume-high{
   color: #8A2BE2;
 }
 .Model .text-to-speech button {
@@ -173,10 +200,19 @@
   background-color: #8A2BE2;
   color: white;
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+  font-weight:600;
 }
-.Model .text-to-speech button i {
-  color: aqua;
+
+.Model svg{
+  width: auto;
+  height: auto;
 }
-.Model .text-to-speech button:hover {
-  color: black;
+
+.Model .result-box{
+  font-family: "Poppins", sans-serif;
+}
+
+.Model .result-box .question{
+  font-weight: 600;
+  margin-bottom: 10px;
 }

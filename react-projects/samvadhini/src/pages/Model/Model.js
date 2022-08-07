@@ -144,11 +144,11 @@ function Model() {
       </svg>
       {/* <Particle></Particle> */}
       <div className="container">
-        <svg width="1920" height="611" viewBox="355 253 1920 611" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="1920" height="611" viewBox="355 235 1920 611" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M2240 -51.4365C2240 383.523 1633.61 611 926.689 611C219.765 611 -320 383.523 -320 -51.4365C-320 -486.396 253.075 -839 960 -839C1666.92 -839 2240 -486.396 2240 -51.4365Z" fill="#8A2BE2" />
         </svg>
         <div className="container-2">
-          <h1 className="heading">Samvadhini</h1>
+          <h1 className="heading">Samvaadini</h1>
           <div className="box">
             <div className="instr">
               <h2>Instructions</h2>
@@ -177,7 +177,7 @@ function Model() {
           </div>
           <div className="box">
             <div className="result-box">
-              <p>{answer}</p>
+              <p className="question">{answer}</p>
               <p>{meta}</p>
             </div>
           </div>
@@ -201,8 +201,8 @@ function Model() {
       </div>
       <Altresponse trigger={buttonPopup} setTrigger={setButtonPopup}>
         <p>{popupData.slice(1).map(e => {
-          return <li style={{ listStyleType: `decimal`, padding:'1%' }}>{e.question ? e.question : ""}<br/>
-          {e.answer ? e.answer : ""}</li>
+          return <li style={{ listStyleType: `decimal`, padding:'1%',fontWeight:600 }}>{e.question ? e.question : ""}<br/>
+          <p style={{fontWeight:400, marginTop:"10px"}}>{e.answer ? e.answer : ""}</p><br/></li>
         })}</p>
         {/* {alt} */}
       </Altresponse>

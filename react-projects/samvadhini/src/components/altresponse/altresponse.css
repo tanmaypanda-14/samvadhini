@@ -10,21 +10,51 @@
     align-items: center;
 }
 
+.popup-inner button{
+    position: fixed;
+}
 .popup-inner{
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
     position: relative;
     padding: 32px;
     width: 100%;
+    max-height: 70vh;
     max-width: 640px;
     background-color: #FFF;
     border-radius: 15px;
+    overflow-y: scroll;
 }
 
+.popup-inner::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+    height: 12px;
+  }
+  .popup-inner::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  .popup-inner::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 20px;
+    border-right: 4px solid transparent;
+    background-clip: padding-box;
+  }
+  .popup-inner::-webkit-scrollbar-button {
+    display: block;
+    height: 12px;
+  }
+
 .popup-inner .close-btn{
-    position: absolute;
+    position: fixed;
     top: 16px;
     right: 16px;
     border: none;
+    background: transparent;
+    font-size: 2rem;
 }
+
+
 
 .popup .close-btn button{
     background: transparent;
@@ -32,5 +62,5 @@
 }
 
 .popup .close-btn button i{
-    color: black;
+    color: white;
 }
