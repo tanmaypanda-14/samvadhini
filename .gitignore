@@ -24,3 +24,7 @@ key.json
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+/api/mlruns 
+/api/utils/__pycache__
