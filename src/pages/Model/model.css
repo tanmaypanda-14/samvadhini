@@ -1,9 +1,24 @@
+<<<<<<< HEAD
+=======
+.Model {
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-image: url(../../assets/back8.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* background of the scrollbar except button or resizer */
+  /* scrollbar itself */
+  /* set button(top and bottom of the scrollbar) */
+}
+>>>>>>> newone2
 .Model .container {
   position: absolute;
   top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
+<<<<<<< HEAD
   background: white;
   width: 80vw;
   height: auto;
@@ -15,10 +30,75 @@
   text-align: center;
   font-size: 3rem;
   letter-spacing: 3px;
+=======
+  width: 80vw;
+  height: 85vh;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+  overflow-y: scroll;
+  background-image: url(../../assets/back16.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.Model .container::-webkit-scrollbar{
+  width: 0px;
+}
+
+.Model .container-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  width: 80vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  overflow-x: hidden;
+}
+.Model .container-2::-webkit-scrollbar {
+  background-color: transparent;
+  width: 10px;
+  height: 12px;
+}
+.Model .container-2::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.Model .container-2::-webkit-scrollbar-thumb {
+  background-color: #babac0;
+  border-radius: 20px;
+  border-right: 4px solid transparent;
+  background-clip: padding-box;
+}
+.Model .container-2::-webkit-scrollbar-button {
+  display: block;
+  height: 12px;
+}
+.Model .heading {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  color: white;
+  margin-top: 6%;
+  margin-bottom: 5%;
+}
+.Model .box {
+  width: 90%;
+  background-color: white;
+  align-self: center;
+  padding: 2%;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+>>>>>>> newone2
 }
 .Model .instr {
   font-family: "Roboto", sans-serif;
   font-style: italic;
+<<<<<<< HEAD
   margin-left: 2%;
 }
 
@@ -26,11 +106,23 @@
   list-style-type: decimal;
 }
 
+=======
+  font-size: 0.85rem;
+  margin-left: 2%;
+  line-height: 1.3rem;
+}
+.Model .instr li {
+  list-style-type: decimal;
+}
+>>>>>>> newone2
 .Model .text-and-btn {
   margin: 1% 2% 1% 2%;
   display: flex;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> newone2
 .Model .text-and-btn .wrap-p {
   width: 80vw;
   display: flex;
@@ -38,12 +130,16 @@
   align-items: flex-end;
   /* border-bottom: 1px solid #004080; */
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> newone2
 .Model .wrap-p input {
   width: auto;
   width: 60vw;
   text-align: center;
   border: none;
+<<<<<<< HEAD
   border-bottom: 1px solid #004080;
   outline: none;
   font-size: 1.5rem;
@@ -78,16 +174,61 @@
   color: #004080;
 }
 
+=======
+  border: 1px solid black;
+  border-radius: 20px;
+  outline: none;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  padding: 0.5%;
+}
+.Model .text-and-btn button {
+  display: block;
+  height: auto;
+  width: auto;
+  padding: 1% 1.3%;
+  border-radius: 60%;
+  border: none;
+  background-color: #8A2BE2;
+  font-size: 0.75rem;
+  font-weight:600;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+}
+.Model .text-and-btn button:hover {
+  display: block;
+  height: auto;
+  width: auto;
+  padding: 1% 1.3%;
+  border-radius: 60%;
+  background-color: rgb(173, 0, 0);
+}
+.Model i {
+  color: white;
+}
+.Model .text-and-btn button:hover i {
+  color: #8A2BE2;
+}
+>>>>>>> newone2
 .Model .submit-btn {
   margin: 1% 2% 1% 2%;
   display: flex;
   justify-content: center;
 }
+<<<<<<< HEAD
 
+=======
+.Model .submit-btn img {
+  margin-left: 20px;
+  height: 50px;
+  width: auto;
+}
+>>>>>>> newone2
 .Model .submit-btn button {
   padding: 12px;
   border-radius: 10px;
   border: none;
+<<<<<<< HEAD
   background-color: #004080;
   color: white;
 }
@@ -106,25 +247,55 @@
   margin-left: 2%;
 }
 
+=======
+  background-color: #8A2BE2;
+  color: white;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+  font-weight:600;
+  font-size: 0.9rem;
+}
+.Model .submit-btn button:hover {
+  padding: 11px;
+  border-radius: 10px;
+  border: 1px solid #8A2BE2;
+  background-color: white;
+  color: #8A2BE2;
+}
+.Model .result-txt {
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+  margin-left: 2%;
+}
+>>>>>>> newone2
 .Model .result-box {
   height: auto;
   margin: 1% 2% 1% 2%;
   padding: 1% 2% 1% 2%;
+<<<<<<< HEAD
   border: 1px solid black;
   border-radius: 20px;
 }
 
+=======
+}
+>>>>>>> newone2
 .Model .finish-btn {
   margin: 1% 2% 1% 2%;
   display: flex;
   justify-content: center;
   gap: 2%;
+<<<<<<< HEAD
   font-family: 'Poppins', sans-serif;
+=======
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 5%;
+>>>>>>> newone2
 }
 .Model .finish-btn button {
   padding: 12px;
   border-radius: 10px;
   border: none;
+<<<<<<< HEAD
   background-color: #004080;
   color: white;
   font-family: 'Poppins', sans-serif;
@@ -145,4 +316,44 @@
   border: none;
   background-color: #004080;
   color: white;
+=======
+  background-color: #8A2BE2;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+  font-weight:600;
+}
+.Model .finish-btn button:hover {
+  padding: 11px;
+  border-radius: 10px;
+  border: 1px solid #8A2BE2;
+  background-color: white;
+  color: #8A2BE2;
+}
+.Model .finish-btn button:hover .fa-volume-high{
+  color: #8A2BE2;
+}
+.Model .text-to-speech button {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background-color: #8A2BE2;
+  color: white;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+  font-weight:600;
+}
+
+.Model svg{
+  width: auto;
+  height: auto;
+}
+
+.Model .result-box{
+  font-family: "Poppins", sans-serif;
+}
+
+.Model .result-box .question{
+  font-weight: 600;
+  margin-bottom: 10px;
+>>>>>>> newone2
 }
