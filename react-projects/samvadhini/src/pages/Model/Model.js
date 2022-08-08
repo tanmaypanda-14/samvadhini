@@ -24,13 +24,31 @@ function Model() {
   const [popupData, setpopupData] = useState([]);
   const [selectedOpt, setSelectedOpt] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  const [checkEng, setCheckEng] = useState(true)
 
   mic.lang = location.state.language;
   useEffect(() => {
     handleListen();
   }, [isListening]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  useEffect(() => {
+      if(selectedOpt.value==="en-IN"){
+        setCheckEng(true)
+      }else if (selectedOpt.value==="hi-IN"){
+        setCheckEng(false)
+      }else if(selectedOpt.value==="mr-IN"){
+        setCheckEng(false)
+      }
+  }, [selectedOpt])
+
+  useEffect(() => {
+    if(mic.lang === "en-IN"){
+      setCheckEng(true)
+    }else{
+      setCheckEng(false)
+    }
+  }, [])
+  
   const handleListen = () => {
     if (isListening) {
       mic.start();
@@ -139,14 +157,8 @@ function Model() {
 
   return (
     <div className="Model">
-      <svg width="1920" height="611" viewBox="200 200 1920 611" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2240 -51.4365C2240 383.523 1633.61 611 926.689 611C219.765 611 -320 383.523 -320 -51.4365C-320 -486.396 253.075 -839 960 -839C1666.92 -839 2240 -486.396 2240 -51.4365Z" fill="#39135B" />
-      </svg>
       {/* <Particle></Particle> */}
       <div className="container">
-        <svg width="1920" height="611" viewBox="355 235 1920 611" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2240 -51.4365C2240 383.523 1633.61 611 926.689 611C219.765 611 -320 383.523 -320 -51.4365C-320 -486.396 253.075 -839 960 -839C1666.92 -839 2240 -486.396 2240 -51.4365Z" fill="#8A2BE2" />
-        </svg>
         <div className="container-2">
           <h1 className="heading">Samvaadini</h1>
           <div className="box">
@@ -182,16 +194,16 @@ function Model() {
             </div>
           </div>
           <div className="finish-btn">
-            <Select options={actions} defaultValue={() => {
+            {meta?<Select options={actions} defaultValue={() => {
               if (mic.lang === "en-IN") { return actions[0] }
               else if (mic.lang === "hi-IN") { return actions[1] }
               else if (mic.lang === "mr-IN") { return actions[2] }
-            }} onChange={handleChange} ></Select>
+            }} onChange={handleChange} ></Select>:null}{checkEng?
             <button onClick={text_to_speech} id="text-to-speech-btn">
               <i
                 className="fa-solid fa-volume-high"
               ></i>
-            </button>
+            </button>:null}
             <button className="alt-btn" onClick={() => setButtonPopup(true)}>
               Alt
             </button>
