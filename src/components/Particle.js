@@ -27,7 +27,11 @@ function Particle() {
 
         background: {
           color: {
+<<<<<<< HEAD
             value: "#004080",
+=======
+            value: "#39135B",
+>>>>>>> newone2
           },
         },
         fpsLimit: 30,
@@ -99,4 +103,8 @@ function Particle() {
     />
   );
 }
+<<<<<<< HEAD
 export default Particle;
+=======
+export default Particle;
+>>>>>>> newone2

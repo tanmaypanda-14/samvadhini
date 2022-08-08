@@ -10,7 +10,11 @@ const Home = () => {
 
   useEffect(() => {
     const typed = new Typed(el.current, {
+<<<<<<< HEAD
       strings: ["Welcome to Samvadhini", "How can we help you"], // Strings to display
+=======
+      strings: ["Welcome to Samvaadini", "How can we help you"], // Strings to display
+>>>>>>> newone2
       // Speed settings, try diffrent values until you get good results
       startDelay: 300,
       typeSpeed: 150,

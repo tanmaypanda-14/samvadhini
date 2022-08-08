@@ -6,6 +6,7 @@ from haystack.pipelines import ExtractiveQAPipeline
 from flask import Flask, make_response, request
 from googletrans import Translator
 from flask_cors import CORS
+from utils.fb import *
 
 app = Flask(__name__)
 CORS(app)
@@ -26,7 +27,7 @@ def fetch_trans(question):
 def gen_result(text):
     # text = "ळ " + text
     translator = Translator()
-    detect_lang = translator.detect(text)
+    detect_lang = translator.detect(text).lang
     dt1 = translator.translate(text, dest="en")
     translated_query = dt1.text
 
@@ -34,8 +35,8 @@ def gen_result(text):
     prediction = pipe.run(
         query=translated_query,
         params={
-            "Retriever": {"top_k": 10},
-            "Reader": {"top_k": 5},
+            "Retriever": {"top_k": 3},
+            "Reader": {"top_k": 1},
         },  # optimization parameters
     )
     print(type(prediction))
@@ -55,6 +56,12 @@ def gen_result(text):
                 "answer_hi": answer_hi,
             }
         )
+    logging_data = {
+        "text": text,
+        "question": final_response[0]["question"],
+        "language": detect_lang,
+    }
+    insert_log(db, logging_data)
     return {"documents": final_response}
 
 
@@ -94,4 +101,5 @@ if __name__ == "__main__":
     # temp = trans()
     # print(temp)
     app.config["JSON_AS_ASCII"] = False
+    db = init_firebase()
     app.run(debug=True, host="0.0.0.0")

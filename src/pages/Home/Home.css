@@ -9,7 +9,11 @@
   grid-template-rows: 1fr auto 1fr;
 }
 .welcome {
+<<<<<<< HEAD
   font-family: "Oxanium", cursive;
+=======
+  font-family: "Poppins", sans-serif;
+>>>>>>> newone2
   color: white;
   text-align: center;
   font-size: 3rem;
@@ -40,12 +44,21 @@
 .btn button {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
+<<<<<<< HEAD
   color: #0b4b9e;
   font-size: 1.4rem;
   padding: 1%;
   border-radius: 10px;
   border: solid 3.5px #a7b3e9;
   background-color: #a7b3e9;
+=======
+  color: white;
+  font-size: 1.4rem;
+  padding: 1%;
+  border-radius: 10px;
+  border: solid 3.5px #8A2BE2;
+  background-color: #8A2BE2;
+>>>>>>> newone2
   transition: width 0.5s;
   /* background-repeat:no-repeat; */
 }
@@ -53,8 +66,13 @@
 .btn button:hover {
   background-color: transparent;
   background-repeat: no-repeat;
+<<<<<<< HEAD
   border: solid 3.5px #e0c9a6;
   color: #e0c9a6;
+=======
+  border: solid 3.5px white;
+  color: white;
+>>>>>>> newone2
 }
 
 .row1 {
@@ -67,4 +85,8 @@
   margin: 50px auto;
   justify-self: center;
   display: block;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> newone2
